@@ -108,7 +108,7 @@ class GLNSignUpTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func handleContinueAction() {
-        GLNUserDefaultsWrapper.sharedInstance.setBooleanValueForKey(value: true, key: "isLoggedIn")
+        GLNUserDefaultsWrapper.sharedInstance.setBooleanValueForKey(value: true, key: GLNDefaultsKeys.LoggedInKey)
         self.performSegue(withIdentifier: "UnwindSignupToGetStartedSegue", sender: self)
     }
 

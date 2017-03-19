@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C918D7A11E5AA8C300868EF0 /* GLNQuizImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918D7A01E5AA8C300868EF0 /* GLNQuizImageView.swift */; };
 		C95EB9951E569DCB00C09E28 /* GLNUserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95EB9941E569DCB00C09E28 /* GLNUserDefaultsWrapper.swift */; };
+		C95EB9971E57551300C09E28 /* GLNCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95EB9961E57551300C09E28 /* GLNCardController.swift */; };
 		C977CED81E500463009DE126 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C977CED71E500463009DE126 /* AppDelegate.swift */; };
 		C977CEDD1E500463009DE126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C977CEDB1E500463009DE126 /* Main.storyboard */; };
 		C977CEDF1E500463009DE126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C977CEDE1E500463009DE126 /* Assets.xcassets */; };
@@ -30,7 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C918D7A01E5AA8C300868EF0 /* GLNQuizImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLNQuizImageView.swift; sourceTree = "<group>"; };
 		C95EB9941E569DCB00C09E28 /* GLNUserDefaultsWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLNUserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		C95EB9961E57551300C09E28 /* GLNCardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLNCardController.swift; sourceTree = "<group>"; };
 		C977CED41E500463009DE126 /* GetLearnt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetLearnt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C977CED71E500463009DE126 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C977CEDC1E500463009DE126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,10 +69,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C918D7991E5AA6A000868EF0 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				C918D7A01E5AA8C300868EF0 /* GLNQuizImageView.swift */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
 		C95EB9931E569D8C00C09E28 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C918D7991E5AA6A000868EF0 /* User Interface */,
 				C95EB9941E569DCB00C09E28 /* GLNUserDefaultsWrapper.swift */,
+				C95EB9961E57551300C09E28 /* GLNCardController.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -275,6 +289,8 @@
 				C977CEF91E50314F009DE126 /* GLNSignUpTableViewController.swift in Sources */,
 				C977CEEF1E50097D009DE126 /* GLNUserProperties.swift in Sources */,
 				C977CEFD1E5122F7009DE126 /* GLNQuestionInstance.swift in Sources */,
+				C918D7A11E5AA8C300868EF0 /* GLNQuizImageView.swift in Sources */,
+				C95EB9971E57551300C09E28 /* GLNCardController.swift in Sources */,
 				C977CEF31E50106C009DE126 /* GLNGetStartedViewController.swift in Sources */,
 				C977CF0C1E53E47A009DE126 /* GLNDeckDetailTableViewController.swift in Sources */,
 				C977CF061E515398009DE126 /* GLNCardDeckCollectionViewCell.swift in Sources */,

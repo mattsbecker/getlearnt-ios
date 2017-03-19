@@ -11,9 +11,7 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class GLNCardDecksCollectionViewController: UICollectionViewController {
-    
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,7 +38,7 @@ class GLNCardDecksCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        let cardDeckCount = appDelegate.availableCardDecks.count
+        let cardDeckCount = GLNCardController.sharedController.availableCardDecks().count
         return cardDeckCount
     }
 
@@ -49,14 +47,14 @@ class GLNCardDecksCollectionViewController: UICollectionViewController {
     
         // get a count of the total number of cards, and ensure there are questions in the deck
         var cardCount = 0
-        if appDelegate.availableCardDecks[indexPath.row].questionInstances != nil {
-            cardCount = appDelegate.availableCardDecks[indexPath.row].questionInstances.count
+        if GLNCardController.sharedController.availableCardDecks()[indexPath.row].questionInstances != nil {
+            cardCount = GLNCardController.sharedController.availableCardDecks()[indexPath.row].questionInstances.count
         }
 
         /* If there are cards in the deck, show total count in the cell.
             Otherwise, show "no cards".
          */
-        cell.lblCardDeckName.text = appDelegate.availableCardDecks[indexPath.row].deckName
+        cell.lblCardDeckName.text = GLNCardController.sharedController.availableCardDecks()[indexPath.row].deckName
         if cardCount > 0 {
             cell.lblCardCount.text = "\(cardCount) Cards"
         } else {
@@ -76,7 +74,7 @@ class GLNCardDecksCollectionViewController: UICollectionViewController {
             let selectedItemPath = self.collectionView?.indexPathsForSelectedItems?[0]
             // get the cards for the deck and give them to the destination view controller
             
-            destination.cardDeck = appDelegate.availableCardDecks[selectedItemPath!.row]
+            destination.cardDeck = GLNCardController.sharedController.availableCardDecks()[selectedItemPath!.row]
         }
     }
 
@@ -92,7 +90,7 @@ class GLNCardDecksCollectionViewController: UICollectionViewController {
     }
     
     @IBAction func btnLogoutPress(_ sender: Any) {
-        GLNUserDefaultsWrapper.sharedInstance.setBooleanValueForKey(value: false, key: "isLoggedIn")
+        GLNUserDefaultsWrapper.sharedInstance.setBooleanValueForKey(value: false, key: GLNDefaultsKeys.LoggedInKey)
         self.performSegue(withIdentifier: "UnwindToGetStartedSegue", sender: self)
     }
 }

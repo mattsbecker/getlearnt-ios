@@ -125,8 +125,7 @@ class GLNNewCardDeckTableViewController: UITableViewController, UITextFieldDeleg
         let newDeck = GLNCardDeck.init(ownerId: 1, name: self.newDeckTempData["deckName"]!, deckClass: self.newDeckTempData["className"]!, instructor: self.newDeckTempData["instructorName"]!, createdAt: "2016-08-17 04:08:36.556415", updatedAt: "2016-08-17 04:08:36.556415", quizCode: "3TFSAJ")
         
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.availableCardDecks.append(newDeck)
+        GLNCardController.sharedController.newCardDeck(deck: newDeck)
         
         self.performSegue(withIdentifier: "UnwindNewDeckToCardDecks", sender: self)
     }

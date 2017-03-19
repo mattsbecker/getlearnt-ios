@@ -21,9 +21,8 @@ class GLNQuizViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        startFromBeginning()
-        hideUnusedUIElementsForCard()
+        self.startFromBeginning()
+        self.hideUnusedUIElementsForCard()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,22 +44,12 @@ class GLNQuizViewController: UIViewController {
         self.txtViewAnswer.alpha = 1.0
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     func startFromBeginning() {
         self.navigationItem.title = "Question \(currentQuizPosition+1) of \(self.cardDeck!.questionInstances.count)"
         self.txtViewAnswer.text = cardDeck?.questionInstances[0].answerText
         self.txtViewQuestion.text = cardDeck?.questionInstances[0].questionText
         self.txtViewAnswer.alpha = 0.0
-        self.imgQuestionMedia.image = cardDeck?.questionInstances[0].questionImage
+        self.imgQuestionMedia.image = cardDeck?.questionInstances[currentQuizPosition].questionImage
     }
     
     func nextQuestion() {
@@ -76,6 +65,8 @@ class GLNQuizViewController: UIViewController {
         self.navigationItem.title = "Question \(currentQuizPosition+1) of \(self.cardDeck!.questionInstances.count)"
         self.txtViewAnswer.text = cardDeck?.questionInstances[currentQuizPosition].answerText
         self.txtViewQuestion.text = cardDeck?.questionInstances[currentQuizPosition].questionText
+        // then reallocate with new images
+        
         self.imgQuestionMedia.image = cardDeck?.questionInstances[currentQuizPosition].questionImage
     }
     
@@ -107,7 +98,7 @@ class GLNQuizViewController: UIViewController {
     
     func randomizeFromAlert(_ alert: UIAlertAction!) {
         print("Started Over!")
-        startFromBeginning()
+        self.startFromBeginning()
     }
     
     func returnToYourDecks(_ alert: UIAlertAction!) {

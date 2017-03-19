@@ -19,16 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // initialize the user defaults
         
         let defaults = GLNUserDefaultsWrapper.sharedInstance
-        let isLoggedIn = defaults.booleanValueForKey(key: "isLoggedIn")
+        let isLoggedIn = defaults.booleanValueForKey(key: GLNDefaultsKeys.LoggedInKey)
         print("Is logged in?: \(isLoggedIn)")
         
-        
-        // fake some test decks for now... Load the test data
-        let testDecks = TestCardDecks.init()
-        let surveyThree = testDecks.testDeckSurveyThree
-        
-        // append the test data to the array
-        self.availableCardDecks.append(surveyThree)
+        var cardController = GLNCardController.sharedController
+        withUnsafePointer(to: &cardController) {
+            print("Initialized Card Controller: \(cardController) - \($0)")
+        }
         
         return true
     }

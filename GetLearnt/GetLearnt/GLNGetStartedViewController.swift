@@ -13,7 +13,7 @@ class GLNGetStartedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         // we don't show the navigation bar on this view
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        let isLoggedIn = GLNUserDefaultsWrapper.sharedInstance.booleanValueForKey(key: "isLoggedIn")
+        let isLoggedIn = GLNUserDefaultsWrapper.sharedInstance.booleanValueForKey(key: GLNDefaultsKeys.LoggedInKey)
         if (isLoggedIn) {
             self.performSegue(withIdentifier: "GetStartedToDecksSegue", sender: self)
         } else {
